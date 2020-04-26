@@ -1,0 +1,22 @@
+.fill-remaining-space {
+  width: 100%;
+}
+
+mat-toolbar {
+  background-color: rgba(14, 91, 101, 0.1);
+  position: absolute;
+  z-index: 1;
+  width: 100vw;
+}
+
+
+::ng-deep .my-menu {
+  width: calc(100vw) !important;
+  position: relative;
+  max-width: unset !important;
+}
+
+::ng-deep mat-toolbar button p {
+  color: #ffffff!important;
+  opacity: unset!important;
+}
