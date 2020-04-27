@@ -1,9 +1,11 @@
 .fill-remaining-space {
+  display: flex;
   width: 100%;
 }
 
 mat-toolbar {
-  background-color: rgba(14, 91, 101, 0.1);
+  margin-top: 20px;
+  background-color: rgba(14, 91, 101, 0.08);
   position: absolute;
   z-index: 1;
   width: 100vw;
@@ -11,12 +13,34 @@ mat-toolbar {
 
 
 ::ng-deep .my-menu {
+  margin-top: 25px;
   width: calc(100vw) !important;
   position: relative;
   max-width: unset !important;
 }
 
 ::ng-deep mat-toolbar button p {
-  color: #ffffff!important;
-  opacity: unset!important;
+  color: #ffffff !important;
+  opacity: unset !important;
+}
+
+p {
+  display: block;
+  margin: auto;
+}
+
+.hover-button {
+  position: relative;
+}
+
+.hover-button:after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid white;
+  left: 0;
+  top: 50px;
 }

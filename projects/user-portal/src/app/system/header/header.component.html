@@ -1,8 +1,8 @@
 <mat-toolbar>
   <span class="fill-remaining-space">
-    <button mat-button [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger" (mouseover)="menuTrigger.openMenu()">
+    <button mat-button [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger" (mouseover)="menuTrigger.openMenu()" >
 <!--      <mat-icon>menu</mat-icon>-->
-      <p>Лаки для ногтей</p>
+      <p [ngClass]="{'hover-button': menuTrigger.menuOpen}">Лаки для ногтей</p>
     </button>
     <mat-menu #menu="matMenu" [overlapTrigger]="false" class="my-menu">
     <span (mouseleave)="menuTrigger.closeMenu()">
@@ -27,7 +27,7 @@
 
     <button mat-button [matMenuTriggerFor]="menu1" #menuTrigger1="matMenuTrigger" (mouseover)="menuTrigger1.openMenu()">
 <!--      <mat-icon>menu</mat-icon>-->
-      <p>Лаки для ногтей</p>
+      <p [ngClass]="{'hover-button': menuTrigger1.menuOpen}">Лаки для ногтей</p>
     </button>
     <mat-menu #menu1="matMenu" [overlapTrigger]="false" class="my-menu">
     <span (mouseleave)="menuTrigger1.closeMenu()">
@@ -52,7 +52,7 @@
 
     <button mat-button [matMenuTriggerFor]="menu2" #menuTrigger2="matMenuTrigger" (mouseover)="menuTrigger2.openMenu()">
 <!--      <mat-icon>menu</mat-icon>-->
-      <p>Лаки для ногтей</p>
+      <p [ngClass]="{'hover-button': menuTrigger2.menuOpen}">Лаки для ногтей</p>
     </button>
     <mat-menu #menu2="matMenu" [overlapTrigger]="false" class="my-menu">
     <span (mouseleave)="menuTrigger2.closeMenu()">
@@ -77,7 +77,7 @@
 
     <button mat-button [matMenuTriggerFor]="menu3" #menuTrigger3="matMenuTrigger" (mouseover)="menuTrigger3.openMenu()">
 <!--      <mat-icon>menu</mat-icon>-->
-      <p>Лаки для ногтей</p>
+      <p [ngClass]="{'hover-button': menuTrigger3.menuOpen}">Лаки для ногтей</p>
     </button>
     <mat-menu #menu3="matMenu" [overlapTrigger]="false" class="my-menu">
     <span (mouseleave)="menuTrigger3.closeMenu()">
