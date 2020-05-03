@@ -10,6 +10,10 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {FormsModule} from '@angular/forms';
+import { NewItemsComponent } from './system/new-items/new-items.component';
+import { BestsellersComponent } from './system/bestsellers/bestsellers.component';
+import { SaleItemsComponent } from './system/sale-items/sale-items.component';
+import {BrowserModule} from '@angular/platform-browser';
 
 
 @NgModule({
@@ -17,9 +21,13 @@ import {FormsModule} from '@angular/forms';
     AppComponent,
     SystemComponent,
     MainComponent,
-    HeaderComponent
+    HeaderComponent,
+    NewItemsComponent,
+    BestsellersComponent,
+    SaleItemsComponent
   ],
   imports: [
+    BrowserModule,
     BrowserAnimationsModule,
     MatTabsModule,
     MatButtonModule,

@@ -147,8 +147,7 @@
       "prefix": "app",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
-        }
+          "style": "scss"}
       },
       "architect": {
         "build": {

@@ -1,0 +1,96 @@
+//$itemBgClr: linear-gradient(to left bottom, #dc9fc7 0%, #f1c2c9 100%);
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+}
+
+.background-bestsellers {
+  margin-right: 30px;
+  width: 75%;
+  height: 300px;
+  background: url("/../../../assets/brush strokes.png") center right no-repeat;
+  background-size: auto 500px;
+  background-color: #e6f0f9;
+  display: flex;
+  flex-direction: row;
+}
+
+.search-bestsellers {
+  width: 25%;
+  height: 300px;
+  background-color: #e6f0f9;
+}
+
+p {
+  color: #cbadc7;
+  display: block;
+}
+
+.description-bestsellers {
+  transition: transform .5s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.description-bestsellers:hover, .description-bestsellers:focus {
+  transform: scale(1.2);
+}
+
+.to-search {
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.search-icon {
+  color: #cbadc7;
+  font-size: 86px;
+}
+
+p.category {
+  font-family: "PT Sans", sans-serif;
+  font-size: 16px;
+  font-weight: bolder;
+  letter-spacing: 2px;
+  padding-top: 30px;
+  padding-bottom: 15px;
+  text-transform: uppercase;
+}
+
+p.description-product {
+  font-family: Roboto, sans-serif;
+  font-size: 36px;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+p.sub-category {
+  font-family: 'Dancing Script', cursive;
+  font-size: 46px;
+  color: #c4c3c8;
+  letter-spacing: 4px;
+  padding-top: 50px;
+}
+
+.search-group {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: transform .7s;
+}
+
+.polish {
+  width: 400px;
+  height: auto;
+  display: block;
+}
+
+.search-group:hover, .search-group:focus {
+  transform: scale(1.1);
+}

@@ -1,0 +1,11 @@
+<div id="gallery">
+  <ul>
+    <li *ngFor="let saleItem of saleItems">
+      <img src="../../../assets/polish.png">{{saleItem.name}} {{saleItem.num}}
+    </li>
+  </ul>
+</div>
+
+<button type="button" id="prev" (click)="onChangeItem($event)">&laquo;</button>
+<button type="button" id="next" (click)="onChangeItem($event)">&raquo;</button>
+

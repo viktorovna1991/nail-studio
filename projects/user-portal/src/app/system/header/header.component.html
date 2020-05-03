@@ -1,105 +1,156 @@
-<mat-toolbar>
+<div class="wrapper">
+  <mat-toolbar class="logo">
+    <div class="logo-container">
+      <p class="logo-name">ArtNail</p>
+      <p class="logo-description">PROFESSIONAL</p>
+    </div>
+  </mat-toolbar>
+  <mat-toolbar class="main-menu">
   <span class="fill-remaining-space">
-    <button mat-button [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger" (mouseover)="menuTrigger.openMenu()" >
+    <button mat-button [matMenuTriggerFor]="menu" #menuTrigger="matMenuTrigger" (mouseover)="menuTrigger.openMenu()">
 <!--      <mat-icon>menu</mat-icon>-->
-      <p [ngClass]="{'hover-button': menuTrigger.menuOpen}">Лаки для ногтей</p>
+      <p [ngClass]="{'hover-button': menuTrigger.menuOpen}">Гель лаки</p>
     </button>
     <mat-menu #menu="matMenu" [overlapTrigger]="false" class="my-menu">
     <span (mouseleave)="menuTrigger.closeMenu()">
       <button mat-menu-item>
         <mat-icon>home</mat-icon>
-        <span>Home</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon>people_outline</mat-icon>
-        <span>Connecting</span>
+        <span>Палитра гель-лаков</span>
       </button>
       <button mat-menu-item>
         <mat-icon>videocam</mat-icon>
-        <span>Let's talk</span>
+        <span>Обезжиреватели</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>videocam</mat-icon>
+        <span>Праймеры</span>
+      </button>
+       <button mat-menu-item>
+        <mat-icon>people_outline</mat-icon>
+        <span>Базы</span>
       </button>
       <button mat-menu-item>
         <mat-icon>exit_to_app</mat-icon>
-        <span>Logout</span>
+        <span>Топы</span>
+      </button>
+       <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Жидкость для снятия гель-лака/акрила</span>
       </button>
     </span>
     </mat-menu>
 
     <button mat-button [matMenuTriggerFor]="menu1" #menuTrigger1="matMenuTrigger" (mouseover)="menuTrigger1.openMenu()">
-<!--      <mat-icon>menu</mat-icon>-->
       <p [ngClass]="{'hover-button': menuTrigger1.menuOpen}">Лаки для ногтей</p>
     </button>
     <mat-menu #menu1="matMenu" [overlapTrigger]="false" class="my-menu">
     <span (mouseleave)="menuTrigger1.closeMenu()">
       <button mat-menu-item>
-<!--        <mat-icon>home</mat-icon>-->
-        <span>Homeeee</span>
+        <mat-icon>home</mat-icon>
+        <span>Палитра лаков</span>
       </button>
       <button mat-menu-item>
         <mat-icon>people_outline</mat-icon>
-        <span>Connecting</span>
+        <span>Антисептики</span>
       </button>
       <button mat-menu-item>
         <mat-icon>videocam</mat-icon>
-        <span>Let's talk</span>
+        <span>Ремуверы для кутикулы</span>
       </button>
       <button mat-menu-item>
         <mat-icon>exit_to_app</mat-icon>
-        <span>Logout</span>
+        <span>Масла для кутикулы</span>
       </button>
     </span>
     </mat-menu>
 
     <button mat-button [matMenuTriggerFor]="menu2" #menuTrigger2="matMenuTrigger" (mouseover)="menuTrigger2.openMenu()">
-<!--      <mat-icon>menu</mat-icon>-->
-      <p [ngClass]="{'hover-button': menuTrigger2.menuOpen}">Лаки для ногтей</p>
+      <p [ngClass]="{'hover-button': menuTrigger2.menuOpen}">УФ лампы</p>
     </button>
     <mat-menu #menu2="matMenu" [overlapTrigger]="false" class="my-menu">
     <span (mouseleave)="menuTrigger2.closeMenu()">
       <button mat-menu-item>
         <mat-icon>home</mat-icon>
-        <span>Home</span>
+        <span>UV лампы</span>
       </button>
       <button mat-menu-item>
         <mat-icon>people_outline</mat-icon>
-        <span>Connecddddddddting</span>
+        <span>Led лампы</span>
       </button>
       <button mat-menu-item>
         <mat-icon>videocam</mat-icon>
-        <span>Let's talk</span>
+        <span>UF/LED лампы</span>
       </button>
       <button mat-menu-item>
         <mat-icon>exit_to_app</mat-icon>
-        <span>Logout</span>
+        <span>Гибридные лампы</span>
       </button>
     </span>
     </mat-menu>
 
     <button mat-button [matMenuTriggerFor]="menu3" #menuTrigger3="matMenuTrigger" (mouseover)="menuTrigger3.openMenu()">
-<!--      <mat-icon>menu</mat-icon>-->
-      <p [ngClass]="{'hover-button': menuTrigger3.menuOpen}">Лаки для ногтей</p>
+      <p [ngClass]="{'hover-button': menuTrigger3.menuOpen}">Инструменты для маникюра</p>
     </button>
     <mat-menu #menu3="matMenu" [overlapTrigger]="false" class="my-menu">
     <span (mouseleave)="menuTrigger3.closeMenu()">
       <button mat-menu-item>
         <mat-icon>home</mat-icon>
-        <span>Home</span>
+        <span>Пилочки</span>
       </button>
       <button mat-menu-item>
         <mat-icon>people_outline</mat-icon>
-        <span>Connecting</span>
+        <span>Ножницы</span>
       </button>
       <button mat-menu-item>
         <mat-icon>videocam</mat-icon>
-        <span>Let's talk</span>
+        <span>Накожницы</span>
       </button>
       <button mat-menu-item>
         <mat-icon>exit_to_app</mat-icon>
-        <span>Logout</span>
+        <span>Пушеры</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Твизеры</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>exit_to_app</mat-icon>
+        <span>Шпатели</span>
+      </button>
+    </span>
+    </mat-menu>
+
+    <button mat-button [matMenuTriggerFor]="menu" #menuTrigger4="matMenuTrigger" (mouseover)="menuTrigger4.openMenu()">
+      <p [ngClass]="{'hover-button': menuTrigger4.menuOpen}">Контакты</p>
+    </button>
+    <mat-menu #menu="matMenu" [overlapTrigger]="false" class="my-menu">
+    <span (mouseleave)="menuTrigger4.closeMenu()">
+      <button mat-menu-item>
+        <mat-icon>videocam</mat-icon>
+        <span>Телефон</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>videocam</mat-icon>
+        <span>Адрес</span>
+      </button>
+       <button mat-menu-item>
+        <mat-icon>people_outline</mat-icon>
+        <span>Почта</span>
       </button>
     </span>
     </mat-menu>
 
   </span>
-  <!--  <span class="fill-remaining-space">Application Title</span>-->
-</mat-toolbar>
+    <span class="client-data">
+    <button mat-button>
+      <mat-icon>search</mat-icon>
+    </button>
+    <button mat-button>
+      <mat-icon>person_outline</mat-icon>
+    </button>
+    <button mat-button>
+      <mat-icon>work_outline</mat-icon>
+    </button>
+  </span>
+  </mat-toolbar>
+</div>

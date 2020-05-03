@@ -17,17 +17,17 @@ $appShadowClr: rgba(#000, .3);
   position: relative;
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100vh;
-  background-image: $contBgClr;
+  //height: 100vh;
+  //background-image: $contBgClr;
   overflow: hidden;
 }
 
 .app {
   position: relative;
+  top: 20px;
   min-width: 850px;
   height: 540px;
-  box-shadow: 0 0 60px $appShadowClr;
+  box-shadow: 0 0 90px $appShadowClr;
   overflow: hidden;
 
   &__bgimg {
@@ -207,35 +207,43 @@ $appShadowClr: rgba(#000, .3);
   }
 }
 
-.mouse {
-  position: relative;
-  margin-right: 20px;
-  min-width: 50px;
-  height: 80px;
-  border-radius: 30px;
-  border: 5px solid rgba(255, 255, 255, .8);
-
-  &:after {
-    content: '';
-    position: absolute;
-    top: 20px;
-    left: 50%;
-    transform: translate(-50%, 0);
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    background-color: #fff;
-    animation: scroll 1s infinite alternate;
-    @keyframes scroll {
-      100% {
-        transform: translate(-50%, 15px)
-      }
-    }
-  }
+//.mouse {
+//  position: relative;
+//  margin-right: 20px;
+//  min-width: 50px;
+//  height: 80px;
+//  border-radius: 30px;
+//  border: 5px solid rgba(255, 255, 255, .8);
+//
+//  &:after {
+//    content: '';
+//    position: absolute;
+//    top: 20px;
+//    left: 50%;
+//    transform: translate(-50%, 0);
+//    width: 10px;
+//    height: 10px;
+//    border-radius: 50%;
+//    background-color: #fff;
+//    animation: scroll 1s infinite alternate;
+//    @keyframes scroll {
+//      100% {
+//        transform: translate(-50%, 15px)
+//      }
+//    }
+//  }
+//}
+.cont-back {
+  position: absolute;
+  top: 50px;
+  z-index: 0;
+  height: 470px;
+  width: 100vw;
+  background-image: $contBgClr;
 }
 
 .pages {
-  margin-left: 20px;
+  padding-left: 20px;
 
   &__list {
     list-style-type: none;
@@ -244,8 +252,8 @@ $appShadowClr: rgba(#000, .3);
   &__item {
     position: relative;
     margin-bottom: 10px;
-    width: 30px;
-    height: 30px;
+    width: 15px;
+    height: 15px;
     border-radius: 50%;
     border: 3px solid #fff;
     cursor: pointer;
