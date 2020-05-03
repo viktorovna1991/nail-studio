@@ -1,0 +1,83 @@
+$appShadowClr: rgba(#000, .3);
+.wrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+mat-toolbar.main-menu {
+  background-color: white;
+  position: relative;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-container {
+  padding-top: 13px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p.logo-name {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: 'Niconne', cursive;
+  font-size: 32px;
+  line-height: 0.5;
+}
+
+p.logo-description {
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: Monospaced, sans-serif;
+  font-size: 8px;
+  letter-spacing: 3px;
+}
+
+mat-toolbar.logo {
+  padding: 0;
+  background-color: black;
+  position: relative;
+  width: 175px;
+}
+
+::ng-deep .my-menu {
+  background-color: rgba(255, 255, 255, 0.8);
+  margin-top: 25px;
+  width: calc(100vw) !important;
+  position: relative;
+  max-width: unset !important;
+  box-shadow: unset;
+}
+
+::ng-deep mat-toolbar button p {
+  color: #000000 !important;
+  opacity: unset !important;
+}
+
+p {
+  display: block;
+  margin: auto;
+  font-family: "PT Sans Caption", sans-serif;
+}
+
+.hover-button {
+  position: relative;
+}
+
+.hover-button:after {
+  position: absolute;
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-bottom: 10px solid rgba(149, 26, 26, 0.8);
+  left: 0;
+  top: 51px;
+  z-index: 2;
+}
