@@ -3,7 +3,7 @@ import {Component, OnInit} from '@angular/core';
 export interface SaleItem {
   image: string;
   name: string;
-  num: number;
+  price: string;
 }
 
 @Component({
@@ -14,14 +14,14 @@ export interface SaleItem {
 
 export class SaleItemsComponent implements OnInit {
   saleItems: SaleItem[] = [
-    {image: 's', name: 'Frozen yogurt', num: 1},
-    {image: 's', name: 'Frozen yogurt', num: 2},
-    {image: 's', name: 'Frozen yogurt', num: 3},
-    {image: 's', name: 'Frozen yogurt', num: 4},
-    {image: 's', name: 'Frozen yogurt', num: 5},
-    {image: 's', name: 'Frozen yogurt', num: 6},
-    {image: 's', name: 'Frozen yogurt', num: 7},
-    {image: 's', name: 'Frozen yogurt', num: 8},
+    {image: '../../../assets/pink-polish.png', name: 'UV NAGELLACK 7,2 ML - FIRST RAYS', price: '9.90 EUR'},
+    {image: '../../../assets/polish.png', name: 'Frozen yogurt', price: '10.90 EUR'},
+    {image: '../../../assets/pink-polish.png', name: 'UV NAGELLACK 7,2 ML - FRENCH PINK MEDIUM', price: '9.90 EUR'},
+    {image: '../../../assets/polish.png', name: 'Frozen yogurt', price: '10.90 EUR'},
+    {image: '../../../assets/pink-polish.png', name: 'UV NAGELLACK 7,2 ML - FRENCH PINK MEDIUM', price: '9.90 EUR'},
+    {image: '../../../assets/polish.png', name: 'UV NAGELLACK 7,2 ML - FIRST RAYS', price: '10.90 EUR'},
+    {image: '../../../assets/pink-polish.png', name: 'Frozen yogurt', price: '9.90 EUR'},
+    {image: '../../../assets/polish.png', name: 'UV NAGELLACK 7,2 ML - FRENCH PINK MEDIUM', price: '10.90 EUR'},
   ];
 
   gallery;

@@ -45,24 +45,24 @@ p.sale-caption {
   margin: 0;
   padding: 0;
   box-sizing: content-box;
+  display: flex;
 }
 
 #gallery li {
   display: inline-block;
   text-align: center;
-  vertical-align: top;
   width: 220px;
   height: 220px;
   white-space: normal;
-  //padding: 3vw;
   font-size: 14px;
 }
 
 #gallery img {
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
   width: 160px;
   height: 160px;
-  display: block;
-  margin: auto;
 }
 
 .wrapper-buttons {
@@ -91,3 +91,15 @@ label, a {
   color: #626262;
 }
 
+p.description-saleItem {
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 16px;
+  display: block;
+  height: 35px;
+}
+
+p.price-saleItem {
+  font-family: "PT Sans Caption", sans-serif;
+  font-weight: bolder;
+  color: #ec9eab;
+}

@@ -7,7 +7,9 @@
   <div id="gallery">
     <ul>
       <li *ngFor="let saleItem of saleItems">
-        <img src="../../../assets/polish.png">{{saleItem.name}} {{saleItem.num}}
+        <img src="{{saleItem.image}}">
+        <p class="description-saleItem">{{saleItem.name}}</p>
+        <p class="price-saleItem">{{saleItem.price}}</p>
       </li>
     </ul>
   </div>
