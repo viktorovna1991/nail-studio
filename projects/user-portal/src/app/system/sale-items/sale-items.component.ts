@@ -28,34 +28,30 @@ export class SaleItemsComponent implements OnInit {
   items;
   len;
   current = 0;
-  first;
-  last;
 
   constructor() {
   }
 
   ngOnInit() {
     this.len = this.saleItems.length;
-    this.first = this.saleItems[0];
-    this.last = this.saleItems[this.len - 1];
-    this.saleItems.push(this.first);
-    this.saleItems.unshift(this.last);
   }
 
   onChangeItem(event) {
-    const delta = (event.target.id === 'prev') ? 1 : -1;
     if (this.current === 1 && event.target.id === 'prev') {
       this.current = -(this.len);
-    }
-    if (this.current === -1 && event.target.id === 'prev') {
-      this.current = -(this.len + 1);
     }
     if (this.current < -(this.len - 1) && event.target.id === 'next') {
       this.current = 0;
     }
+    if (event.target.id === 'next') {
+      this.saleItems.push(this.saleItems[0]);
+      this.saleItems.shift();
+    }
+    if (event.target.id === 'prev') {
+      this.saleItems.unshift(this.saleItems[this.len - 1]);
+      this.saleItems.pop();
+    }
     this.gallery = document.getElementById('gallery');
-    this.current += delta;
-    this.current = (this.current === 0) ? this.len : this.current;
     this.gallery.style.left = 220 * this.current + 'px';
     return this.current;
   }
