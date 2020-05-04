@@ -1,11 +1,20 @@
-<div id="gallery">
-  <ul>
-    <li *ngFor="let saleItem of saleItems">
-      <img src="../../../assets/polish.png">{{saleItem.name}} {{saleItem.num}}
-    </li>
-  </ul>
+<div class="wrapper-caption">
+  <div class="sale-caption-line"></div>
+  <p class="sale-caption">скидки</p>
+  <div class="sale-caption-line"></div>
+</div>
+<div class="wrapper-carousel">
+  <div id="gallery">
+    <ul>
+      <li *ngFor="let saleItem of saleItems">
+        <img src="../../../assets/polish.png">{{saleItem.name}} {{saleItem.num}}
+      </li>
+    </ul>
+  </div>
+</div>
+<div class="wrapper-buttons">
+  <button type="button" id="prev" (click)="onChangeItem($event)">&laquo;</button>
+  <button type="button" id="next" (click)="onChangeItem($event)">&raquo;</button>
 </div>
 
-<button type="button" id="prev" (click)="onChangeItem($event)">&laquo;</button>
-<button type="button" id="next" (click)="onChangeItem($event)">&raquo;</button>
 

@@ -1,5 +1,4 @@
 import {Component, OnInit} from '@angular/core';
-import {trigger, style, animate, transition, keyframes} from '@angular/animations';
 
 export interface SaleItem {
   image: string;
@@ -12,16 +11,19 @@ export interface SaleItem {
   templateUrl: './sale-items.component.html',
   styleUrls: ['./sale-items.component.scss']
 })
-export class SaleItemsComponent implements OnInit {
 
+export class SaleItemsComponent implements OnInit {
   saleItems: SaleItem[] = [
     {image: 's', name: 'Frozen yogurt', num: 1},
     {image: 's', name: 'Frozen yogurt', num: 2},
     {image: 's', name: 'Frozen yogurt', num: 3},
     {image: 's', name: 'Frozen yogurt', num: 4},
     {image: 's', name: 'Frozen yogurt', num: 5},
-
+    {image: 's', name: 'Frozen yogurt', num: 6},
+    {image: 's', name: 'Frozen yogurt', num: 7},
+    {image: 's', name: 'Frozen yogurt', num: 8},
   ];
+
   gallery;
   items;
   len;
@@ -54,8 +56,7 @@ export class SaleItemsComponent implements OnInit {
     this.gallery = document.getElementById('gallery');
     this.current += delta;
     this.current = (this.current === 0) ? this.len : this.current;
-    this.gallery.style.left = 100 * this.current + 'px';
-    console.log(this.current);
+    this.gallery.style.left = 220 * this.current + 'px';
     return this.current;
   }
 }
