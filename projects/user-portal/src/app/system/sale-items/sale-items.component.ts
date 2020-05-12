@@ -1,10 +1,9 @@
 import {Component, OnInit} from '@angular/core';
-import {trigger, style, animate, transition, keyframes} from '@angular/animations';
 
 export interface SaleItem {
   image: string;
   name: string;
-  num: number;
+  price: string;
 }
 
 @Component({
@@ -12,50 +11,48 @@ export interface SaleItem {
   templateUrl: './sale-items.component.html',
   styleUrls: ['./sale-items.component.scss']
 })
+
 export class SaleItemsComponent implements OnInit {
-
   saleItems: SaleItem[] = [
-    {image: 's', name: 'Frozen yogurt', num: 1},
-    {image: 's', name: 'Frozen yogurt', num: 2},
-    {image: 's', name: 'Frozen yogurt', num: 3},
-    {image: 's', name: 'Frozen yogurt', num: 4},
-    {image: 's', name: 'Frozen yogurt', num: 5},
-
+    {image: '../../../assets/pink-polish.png', name: 'UV NAGELLACK 7,2 ML - FIRST RAYS', price: '9.90 EUR'},
+    {image: '../../../assets/polish.png', name: 'Frozen yogurt', price: '10.90 EUR'},
+    {image: '../../../assets/pink-polish.png', name: 'UV NAGELLACK 7,2 ML - FRENCH PINK MEDIUM', price: '9.90 EUR'},
+    {image: '../../../assets/polish.png', name: 'Frozen yogurt', price: '10.90 EUR'},
+    {image: '../../../assets/pink-polish.png', name: 'UV NAGELLACK 7,2 ML - FRENCH PINK MEDIUM', price: '9.90 EUR'},
+    {image: '../../../assets/polish.png', name: 'UV NAGELLACK 7,2 ML - FIRST RAYS', price: '10.90 EUR'},
+    {image: '../../../assets/pink-polish.png', name: 'Frozen yogurt', price: '9.90 EUR'},
+    {image: '../../../assets/polish.png', name: 'UV NAGELLACK 7,2 ML - FRENCH PINK MEDIUM', price: '10.90 EUR'},
   ];
+
   gallery;
   items;
   len;
   current = 0;
-  first;
-  last;
 
   constructor() {
   }
 
   ngOnInit() {
     this.len = this.saleItems.length;
-    this.first = this.saleItems[0];
-    this.last = this.saleItems[this.len - 1];
-    this.saleItems.push(this.first);
-    this.saleItems.unshift(this.last);
   }
 
   onChangeItem(event) {
-    const delta = (event.target.id === 'prev') ? 1 : -1;
     if (this.current === 1 && event.target.id === 'prev') {
       this.current = -(this.len);
-    }
-    if (this.current === -1 && event.target.id === 'prev') {
-      this.current = -(this.len + 1);
     }
     if (this.current < -(this.len - 1) && event.target.id === 'next') {
       this.current = 0;
     }
+    if (event.target.id === 'next') {
+      this.saleItems.push(this.saleItems[0]);
+      this.saleItems.shift();
+    }
+    if (event.target.id === 'prev') {
+      this.saleItems.unshift(this.saleItems[this.len - 1]);
+      this.saleItems.pop();
+    }
     this.gallery = document.getElementById('gallery');
-    this.current += delta;
-    this.current = (this.current === 0) ? this.len : this.current;
-    this.gallery.style.left = 100 * this.current + 'px';
-    console.log(this.current);
+    this.gallery.style.left = 220 * this.current + 'px';
     return this.current;
   }
 }

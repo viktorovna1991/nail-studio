@@ -1,10 +1,39 @@
+.wrapper-caption {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+p.sale-caption {
+  margin: 0;
+  text-transform: uppercase;
+  font-family: "PT Sans", sans-serif;
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.sale-caption-line {
+  width: 100%;
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 0 30px;
+}
+
 #gallery {
+  display: block;
   position: relative;
-  width: 100px;
-  height: 100px;
-  border: 1px green dotted;
-  margin: 30px 0 0 150px;
-  /* usually an «overflow:hidden» is set here */
+  margin: 30px 0;
+  height: 200px;
+  width: calc(100% - 60px);
+}
+
+.wrapper-carousel {
+  overflow: hidden;
+  margin: 0 34px;
+  height: auto;
+  width: auto;
 }
 
 #gallery ul {
@@ -12,23 +41,38 @@
   white-space: nowrap;
   position: absolute;
   top: 0;
-  left: -100px;
+  left: 0;
   margin: 0;
   padding: 0;
+  box-sizing: content-box;
+  display: flex;
 }
 
 #gallery li {
   display: inline-block;
-  vertical-align: top;
-  width: 96px;
-  height: 96px;
+  text-align: center;
+  width: 220px;
+  height: 220px;
   white-space: normal;
-  padding: 2px;
   font-size: 14px;
 }
+
 #gallery img {
-  width: 96px;
-  height: 96px;
+  display: inline-block;
+  text-align: center;
+  vertical-align: top;
+  width: 160px;
+  height: 160px;
+}
+
+.wrapper-buttons {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  width: calc(100vw - 60px);
 }
 
 button {
@@ -39,7 +83,6 @@ button {
   cursor: pointer;
   width: 50px;
   text-align: center;
-  margin: 20px -150px 0 150px;
 }
 
 label, a {
@@ -48,3 +91,15 @@ label, a {
   color: #626262;
 }
 
+p.description-saleItem {
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 16px;
+  display: block;
+  height: 35px;
+}
+
+p.price-saleItem {
+  font-family: "PT Sans Caption", sans-serif;
+  font-weight: bolder;
+  color: #ec9eab;
+}
