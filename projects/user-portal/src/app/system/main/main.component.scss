@@ -239,7 +239,8 @@ $appShadowClr: rgba(#000, .3);
   z-index: 0;
   height: 470px;
   width: 100vw;
-  background-image: $contBgClr;
+  background: url('/../../../assets/flowers_fon.png') center center no-repeat;
+  background-size: cover;
 }
 
 .pages {

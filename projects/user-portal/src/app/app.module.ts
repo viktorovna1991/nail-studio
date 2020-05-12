@@ -14,7 +14,32 @@ import { NewItemsComponent } from './system/new-items/new-items.component';
 import { BestsellersComponent } from './system/bestsellers/bestsellers.component';
 import { SaleItemsComponent } from './system/sale-items/sale-items.component';
 import {BrowserModule} from '@angular/platform-browser';
+import { FooterComponent } from './system/footer/footer.component';
+import {RouterModule} from '@angular/router';
+import { PolishComponent } from './polish/polish.component';
+import { LampeUVComponent } from './lampe-uv/lampe-uv.component';
+import { InstrumentsComponent } from './instruments/instruments.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { PolishPaletteComponent } from './polish/polish-palette/polish-palette.component';
+import { DegreaserComponent } from './polish/degreaser/degreaser.component';
+import { PrimerComponent } from './polish/primer/primer.component';
+import { BasePolishComponent } from './polish/base-polish/base-polish.component';
+import { TopPolishComponent } from './polish/top-polish/top-polish.component';
+import { PolishRemoverComponent } from './polish/polish-remover/polish-remover.component';
 
+const routes = [
+  {path: '', component: SystemComponent},
+  {path: 'polish', component: PolishComponent},
+  {path: 'basePolish', component: BasePolishComponent},
+  {path: 'degreaser', component: DegreaserComponent},
+  {path: 'polishPalette', component: PolishPaletteComponent},
+  {path: 'polishRemover', component: PolishRemoverComponent},
+  {path: 'primer', component: PrimerComponent},
+  {path: 'topPolish', component: TopPolishComponent},
+  {path: 'lampesUV', component: LampeUVComponent},
+  {path: 'instruments', component: InstrumentsComponent},
+  {path: 'contacts', component: ContactsComponent}
+];
 
 @NgModule({
   declarations: [
@@ -24,9 +49,21 @@ import {BrowserModule} from '@angular/platform-browser';
     HeaderComponent,
     NewItemsComponent,
     BestsellersComponent,
-    SaleItemsComponent
+    SaleItemsComponent,
+    FooterComponent,
+    PolishComponent,
+    LampeUVComponent,
+    InstrumentsComponent,
+    ContactsComponent,
+    PolishPaletteComponent,
+    DegreaserComponent,
+    PrimerComponent,
+    BasePolishComponent,
+    TopPolishComponent,
+    PolishRemoverComponent
   ],
   imports: [
+    RouterModule.forRoot(routes),
     BrowserModule,
     BrowserAnimationsModule,
     MatTabsModule,
