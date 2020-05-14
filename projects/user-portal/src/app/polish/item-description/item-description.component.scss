@@ -1,0 +1,94 @@
+.second-part {
+  width: calc(100% - 60px);
+  height: 1px;
+  background-color: rgba(0, 0, 0, 0.4);
+  margin: 30px;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.item-image {
+  display: flex;
+  justify-content: center;
+}
+
+.item-image img {
+  width: 70%;
+  height: auto;
+}
+
+.item-description {
+  width: 70%;
+  margin-right: 30px;
+}
+
+.item-description h1 {
+  font-family: "PT Sans Caption", sans-serif;
+  font-size: 40px;
+  color: #2a3539;
+  line-height: 1;
+}
+
+.item-description h4 {
+  font-size: 18px;
+  color: #626262;
+}
+
+.item-description p {
+  font-family: "PT Sans Caption", sans-serif;
+  font-weight: bolder;
+  font-size: 24px;
+  margin: 20px 0;
+  color: #ec9eab;
+}
+
+.item-number {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 1px solid rgba(45, 43, 43, 0.51);
+  outline: 0;
+  width: 50px;
+  padding: 8px;
+  font-size: 18px;
+  margin-right: 40px;
+}
+
+.basket-group {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+}
+
+.to-basket mat-icon {
+  margin-right: 10px;
+}
+
+.to-basket {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: "GrotaSans","Trebuchet MS",Tahoma,sans-serif;
+  font-size: 16px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.12rem;
+  background-size: 18px;
+  padding: 7px 10px;
+  border: 0;
+  background-color: rgba(217, 216, 216, 0.73);
+}
+
+.to-basket:focus {
+  outline: 0;
+}
+
+.to-basket:hover {
+  cursor: pointer;
+  background-color: #ec9eab;
+}
