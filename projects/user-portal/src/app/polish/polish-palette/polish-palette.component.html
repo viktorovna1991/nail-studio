@@ -10,7 +10,7 @@
 
 <div id="gallery">
   <ul>
-    <li *ngFor="let item of items">
+    <li *ngFor="let item of items" (click)="onClick($event, item)" >
       <img src="{{item.image}}">
       <p class="name-item">{{item.name}}</p>
       <p class="description-item">{{item.description}}</p>

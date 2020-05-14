@@ -26,6 +26,9 @@ import { PrimerComponent } from './polish/primer/primer.component';
 import { BasePolishComponent } from './polish/base-polish/base-polish.component';
 import { TopPolishComponent } from './polish/top-polish/top-polish.component';
 import { PolishRemoverComponent } from './polish/polish-remover/polish-remover.component';
+import { ItemDescriptionComponent } from './polish/item-description/item-description.component';
+import {ProductService} from './shared/services/product.service';
+import {MatInputModule} from '@angular/material/input';
 
 const routes = [
   {path: '', component: SystemComponent},
@@ -38,7 +41,8 @@ const routes = [
   {path: 'topPolish', component: TopPolishComponent},
   {path: 'lampesUV', component: LampeUVComponent},
   {path: 'instruments', component: InstrumentsComponent},
-  {path: 'contacts', component: ContactsComponent}
+  {path: 'contacts', component: ContactsComponent},
+  {path: 'itemDescription', component: ItemDescriptionComponent}
 ];
 
 @NgModule({
@@ -60,20 +64,22 @@ const routes = [
     PrimerComponent,
     BasePolishComponent,
     TopPolishComponent,
-    PolishRemoverComponent
+    PolishRemoverComponent,
+    ItemDescriptionComponent
   ],
-  imports: [
-    RouterModule.forRoot(routes),
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatTabsModule,
-    MatButtonModule,
-    MatIconModule,
-    MatMenuModule,
-    MatToolbarModule,
-    FormsModule
-  ],
-  providers: [],
+    imports: [
+        RouterModule.forRoot(routes),
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatTabsModule,
+        MatButtonModule,
+        MatIconModule,
+        MatMenuModule,
+        MatToolbarModule,
+        FormsModule,
+        MatInputModule
+    ],
+  providers: [ ProductService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

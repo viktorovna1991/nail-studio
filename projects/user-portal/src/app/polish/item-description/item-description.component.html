@@ -1,0 +1,19 @@
+<div class="second-part"></div>
+
+<div class="wrapper">
+  <div class="item-image">
+    <img src="{{item.image}}" alt="">
+  </div>
+  <div class="item-description">
+    <h1>{{item.name}}</h1>
+    <p>{{item.price}}</p>
+    <h4>{{item.description}}</h4>
+    <div class="basket-group">
+      <input matInput type="number"  [min]='1' class="item-number" [(ngModel)]="min" >
+      <button class="to-basket">
+        <mat-icon>work_outline</mat-icon>
+        Добавить в корзину
+      </button>
+    </div>
+  </div>
+</div>
