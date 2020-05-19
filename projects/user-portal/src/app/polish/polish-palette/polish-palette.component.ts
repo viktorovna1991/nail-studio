@@ -1,6 +1,7 @@
-import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
 import {Item, ProductService} from '../../shared/services/product.service';
+import {IBreadCrumb} from '../../shared/interfaces/breadCrumb.iterface';
 
 
 @Component({
@@ -11,7 +12,16 @@ import {Item, ProductService} from '../../shared/services/product.service';
 export class PolishPaletteComponent implements OnInit {
   items: Item[];
   item;
-
+  breadcrumbs: IBreadCrumb[] = [
+    {
+      label: 'Главная',
+      url: '/main'
+    },
+    {
+      label: 'Цветовая палитра',
+      url: '/polishPalette'
+    }
+  ];
 
   constructor(private router: Router,
               private productService: ProductService) {
@@ -22,7 +32,6 @@ export class PolishPaletteComponent implements OnInit {
   }
 
   onClick(event, item) {
-    console.log('1', item);
     this.item = JSON.stringify(item);
     this.router.navigate(['itemDescription'],  { queryParams: { product: this.item } }).then(r => console.log('navigated'));
   }

@@ -117,3 +117,10 @@ p.description-item {
   cursor: pointer;
   border: 2px solid black;
 }
+
+app-bread-crumb {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin: 30px 0;
+}

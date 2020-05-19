@@ -1,3 +1,4 @@
+<app-bread-crumb [breadcrumbs]="breadcrumbs"></app-bread-crumb>
 <div class="title">
   <h1>Палитра гель лаков</h1>
   <div class="number-group">
@@ -10,7 +11,7 @@
 
 <div id="gallery">
   <ul>
-    <li *ngFor="let item of items" (click)="onClick($event, item)" >
+    <li *ngFor="let item of items" (click)="onClick($event, item)">
       <img src="{{item.image}}">
       <p class="name-item">{{item.name}}</p>
       <p class="description-item">{{item.description}}</p>
