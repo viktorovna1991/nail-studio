@@ -11,20 +11,21 @@ export class ItemDescriptionComponent implements OnInit, OnDestroy {
   item;
   sub;
   min = 1;
-  breadcrumbs: IBreadCrumb[] = [
-    {
-      label: 'Главная',
-      url: '/main'
-    },
-    {
-      label: 'Цветовая палитра',
-      url: '/polishPalette'
-    },
-    {
-      label: 'Описание',
-      url: '/itemDescription'
-    }
-  ];
+  breadcrumbs;
+  // breadcrumbs: IBreadCrumb[] = [
+  //   {
+  //     label: 'Главная',
+  //     url: '/main'
+  //   },
+  //   {
+  //     label: 'Цветовая палитра',
+  //     url: '/polishPalette'
+  //   },
+  //   {
+  //     label: 'Описание',
+  //     url: '/itemDescription'
+  //   }
+  // ];
 
   constructor(private route: ActivatedRoute) {
   }
@@ -33,8 +34,14 @@ export class ItemDescriptionComponent implements OnInit, OnDestroy {
     this.sub = this.route
       .queryParams
       .subscribe(params => {
-        this.item = params['product'];
-        this.item = JSON.parse(this.item);
+        const item = params.product;
+        this.item = JSON.parse(item);
+        const breadcrumbs = params.breadcrumbs;
+        this.breadcrumbs = JSON.parse(breadcrumbs);
+        this.breadcrumbs.push({
+          label: 'Описание',
+          url: '/itemDescription'
+        });
       });
   }
 

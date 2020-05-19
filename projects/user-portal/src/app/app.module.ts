@@ -30,6 +30,11 @@ import {ProductService} from './shared/services/product.service';
 import {MatInputModule} from '@angular/material/input';
 import {AppRoutingModule} from './app.routing.module';
 import {BreadCrumbComponent} from './bread-crumb/bread-crumb.component';
+import {DegreaserService} from './shared/services/degreaser.service';
+import {PrimerService} from './shared/services/primer.service';
+import {BaseService} from './shared/services/base.service';
+import {TopService} from './shared/services/top.service';
+import {RemoverService} from './shared/services/remover.service';
 
 @NgModule({
   declarations: [
@@ -67,7 +72,12 @@ import {BreadCrumbComponent} from './bread-crumb/bread-crumb.component';
     MatInputModule
   ],
   providers: [
-    ProductService
+    ProductService,
+    DegreaserService,
+    PrimerService,
+    BaseService,
+    TopService,
+    RemoverService
   ],
   bootstrap: [AppComponent]
 })

@@ -1,1 +1,21 @@
-<p>base-polish works!</p>
+<app-bread-crumb [breadcrumbs]="breadcrumbs"></app-bread-crumb>
+<div class="title">
+  <h1>Базы</h1>
+  <div class="number-group">
+    <p class="number product-title">{{bases.length}}</p>
+    <div class="line"></div>
+  </div>
+  <p class="word product-title">продуктов</p>
+</div>
+<div class="second-part"></div>
+
+<div id="gallery">
+  <ul>
+    <li *ngFor="let base of bases" (click)="onClick($event, base)">
+      <img src="{{base.image}}" alt="img">
+      <p class="name-item">{{base.name}}</p>
+      <p class="description-item">{{base.description}}</p>
+      <p class="price-item">{{base.price}}</p>
+    </li>
+  </ul>
+</div>

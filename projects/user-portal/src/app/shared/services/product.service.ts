@@ -1,9 +1,4 @@
-export interface Item {
-  image: string;
-  name: string;
-  description: string;
-  price: string;
-}
+import {Item} from '../interfaces/item.interface';
 
 export class ProductService {
   items: Item[] = [

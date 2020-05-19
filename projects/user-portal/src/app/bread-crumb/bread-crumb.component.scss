@@ -30,3 +30,7 @@
 .wrapper {
   padding: 20px 0;
 }
+
+li:last-child {
+  pointer-events: none;
+}

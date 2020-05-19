@@ -1,1 +1,21 @@
-<p>top-polish works!</p>
+<app-bread-crumb [breadcrumbs]="breadcrumbs"></app-bread-crumb>
+<div class="title">
+  <h1>Топы</h1>
+  <div class="number-group">
+    <p class="number product-title">{{tops.length}}</p>
+    <div class="line"></div>
+  </div>
+  <p class="word product-title">продуктов</p>
+</div>
+<div class="second-part"></div>
+
+<div id="gallery">
+  <ul>
+    <li *ngFor="let top of tops" (click)="onClick($event, top)">
+      <img src="{{top.image}}" alt="img">
+      <p class="name-item">{{top.name}}</p>
+      <p class="description-item">{{top.description}}</p>
+      <p class="price-item">{{top.price}}</p>
+    </li>
+  </ul>
+</div>

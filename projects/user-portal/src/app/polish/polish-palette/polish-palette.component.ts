@@ -1,7 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {Item, ProductService} from '../../shared/services/product.service';
 import {IBreadCrumb} from '../../shared/interfaces/breadCrumb.iterface';
+import {Item} from '../../shared/interfaces/item.interface';
+import {ProductService} from '../../shared/services/product.service';
 
 
 @Component({
@@ -33,7 +34,13 @@ export class PolishPaletteComponent implements OnInit {
 
   onClick(event, item) {
     this.item = JSON.stringify(item);
-    this.router.navigate(['itemDescription'],  { queryParams: { product: this.item } }).then(r => console.log('navigated'));
+    const c = JSON.stringify(this.breadcrumbs);
+    this.router.navigate(['itemDescription'], {
+      queryParams: {
+        product: this.item,
+        breadcrumbs: c
+      }
+    }).then(r => console.log('navigated'));
   }
 
 }
