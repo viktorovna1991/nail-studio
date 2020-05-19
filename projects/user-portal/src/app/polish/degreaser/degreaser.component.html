@@ -1,1 +1,21 @@
-<p>degreaser works!</p>
+<app-bread-crumb [breadcrumbs]="breadcrumbs"></app-bread-crumb>
+<div class="title">
+  <h1>Обезжиреватели</h1>
+  <div class="number-group">
+    <p class="number product-title">{{degreasers.length}}</p>
+    <div class="line"></div>
+  </div>
+  <p class="word product-title">продуктов</p>
+</div>
+<div class="second-part"></div>
+
+<div id="gallery">
+  <ul>
+    <li *ngFor="let degreaser of degreasers" (click)="onClick($event, degreaser)">
+      <img src="{{degreaser.image}}" alt="img">
+      <p class="name-item">{{degreaser.name}}</p>
+      <p class="description-item">{{degreaser.description}}</p>
+      <p class="price-item">{{degreaser.price}}</p>
+    </li>
+  </ul>
+</div>

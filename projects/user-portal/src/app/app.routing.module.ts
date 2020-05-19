@@ -25,7 +25,9 @@ const routes: Routes = [
   },
   {path: 'polish', component: PolishComponent},
   {path: 'basePolish', component: BasePolishComponent},
-  {path: 'degreaser', component: DegreaserComponent},
+  {path: 'degreaser', component: DegreaserComponent, data: {
+    breadcrumb: 'Обезжиреватели',
+    }},
   {
     path: 'polishPalette', component: PolishPaletteComponent, data: {
       breadcrumb: 'Цветовая палитра',
