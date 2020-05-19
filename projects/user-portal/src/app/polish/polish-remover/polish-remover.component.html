@@ -1,1 +1,21 @@
-<p>polish-remover works!</p>
+<app-bread-crumb [breadcrumbs]="breadcrumbs"></app-bread-crumb>
+<div class="title">
+  <h1>Жидкости для снятия геля/лака</h1>
+  <div class="number-group">
+    <p class="number product-title">{{removers.length}}</p>
+    <div class="line"></div>
+  </div>
+  <p class="word product-title">продуктов</p>
+</div>
+<div class="second-part"></div>
+
+<div id="gallery">
+  <ul>
+    <li *ngFor="let remover of removers" (click)="onClick($event, remover)">
+      <img src="{{remover.image}}" alt="img">
+      <p class="name-item">{{remover.name}}</p>
+      <p class="description-item">{{remover.description}}</p>
+      <p class="price-item">{{remover.price}}</p>
+    </li>
+  </ul>
+</div>

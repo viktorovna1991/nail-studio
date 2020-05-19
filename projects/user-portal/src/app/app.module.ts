@@ -33,6 +33,8 @@ import {BreadCrumbComponent} from './bread-crumb/bread-crumb.component';
 import {DegreaserService} from './shared/services/degreaser.service';
 import {PrimerService} from './shared/services/primer.service';
 import {BaseService} from './shared/services/base.service';
+import {TopService} from './shared/services/top.service';
+import {RemoverService} from './shared/services/remover.service';
 
 @NgModule({
   declarations: [
@@ -73,7 +75,9 @@ import {BaseService} from './shared/services/base.service';
     ProductService,
     DegreaserService,
     PrimerService,
-    BaseService
+    BaseService,
+    TopService,
+    RemoverService
   ],
   bootstrap: [AppComponent]
 })

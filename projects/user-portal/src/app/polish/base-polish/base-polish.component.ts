@@ -1,8 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import {Degreaser} from '../../shared/interfaces/degreaser.interface';
+import {Component, OnInit} from '@angular/core';
 import {IBreadCrumb} from '../../shared/interfaces/breadCrumb.iterface';
 import {Router} from '@angular/router';
-import {DegreaserService} from '../../shared/services/degreaser.service';
 import {Base} from '../../shared/interfaces/base.interface';
 import {BaseService} from '../../shared/services/base.service';
 
