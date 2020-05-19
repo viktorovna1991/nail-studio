@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-polish',
@@ -6,6 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./polish.component.scss']
 })
 export class PolishComponent implements OnInit {
+  @Input() breadcrumbs;
 
   constructor() { }
 

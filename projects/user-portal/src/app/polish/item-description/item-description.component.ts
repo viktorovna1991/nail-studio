@@ -1,5 +1,6 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {ActivatedRoute} from '@angular/router';
+import {IBreadCrumb} from '../../shared/interfaces/breadCrumb.iterface';
 
 @Component({
   selector: 'app-item-description',
@@ -10,6 +11,20 @@ export class ItemDescriptionComponent implements OnInit, OnDestroy {
   item;
   sub;
   min = 1;
+  breadcrumbs: IBreadCrumb[] = [
+    {
+      label: 'Главная',
+      url: '/main'
+    },
+    {
+      label: 'Цветовая палитра',
+      url: '/polishPalette'
+    },
+    {
+      label: 'Описание',
+      url: '/itemDescription'
+    }
+  ];
 
   constructor(private route: ActivatedRoute) {
   }
