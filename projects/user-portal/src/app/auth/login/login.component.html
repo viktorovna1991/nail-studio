@@ -1,0 +1,37 @@
+<div class="form-container">
+  <mat-card>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+      <mat-chip-list>
+        <mat-chip color="accent" *ngIf="errorMessage" selected>{{errorMessage}}</mat-chip>
+      </mat-chip-list>
+      <mat-form-field>
+        <input matInput placeholder="Имя" formControlName="username">
+        <mat-error *ngIf="formControl.username.errors && formControl.username.errors.required">
+          Не может быть пустым
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="email" formControlName="email">
+        <mat-error *ngIf="formControl.email.errors && formControl.email.errors.required">
+          Не может быть пустым
+        </mat-error>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Пароль" [type]="hide ? 'password' : 'text'" formControlName="password">
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+        <mat-error *ngIf="formControl.password.errors && formControl.password.errors.required">
+          Не может быть пустым
+        </mat-error>
+        <mat-error *ngIf="formControl.password.errors && formControl.password.errors.minlength">
+          Минимальное количество символов 6
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid || disableSubmit">Войти</button>
+    </form>
+
+  </mat-card>
+</div>
+<router-outlet></router-outlet>

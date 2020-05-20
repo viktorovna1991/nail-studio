@@ -9,7 +9,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import {FormsModule} from '@angular/forms';
+import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NewItemsComponent} from './system/new-items/new-items.component';
 import {BestsellersComponent} from './system/bestsellers/bestsellers.component';
 import {SaleItemsComponent} from './system/sale-items/sale-items.component';
@@ -17,7 +17,6 @@ import {BrowserModule} from '@angular/platform-browser';
 import {FooterComponent} from './system/footer/footer.component';
 import {PolishComponent} from './polish/polish.component';
 import {LampeUVComponent} from './lampe-uv/lampe-uv.component';
-import {InstrumentsComponent} from './instruments/instruments.component';
 import {ContactsComponent} from './contacts/contacts.component';
 import {PolishPaletteComponent} from './polish/polish-palette/polish-palette.component';
 import {DegreaserComponent} from './polish/degreaser/degreaser.component';
@@ -35,6 +34,19 @@ import {PrimerService} from './shared/services/primer.service';
 import {BaseService} from './shared/services/base.service';
 import {TopService} from './shared/services/top.service';
 import {RemoverService} from './shared/services/remover.service';
+import {LampService} from './shared/services/lamp.service';
+import {UvLampsComponent} from './lampe-uv/uv-lamps/uv-lamps.component';
+import {LedLampsComponent} from './lampe-uv/led-lamps/led-lamps.component';
+import {UvLedLampsComponent} from './lampe-uv/uv-led-lamps/uv-led-lamps.component';
+import {AuthComponent} from './auth/auth.component';
+import {LoginComponent} from './auth/login/login.component';
+import {AuthService} from './shared/services/auth.service';
+import {MatCardModule} from '@angular/material/card';
+import {MatChipsModule} from '@angular/material/chips';
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {UserService} from './shared/services/user.service';
+import {HttpClientModule} from '@angular/common/http';
+import {RegistrationComponent} from './auth/registration/registration.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +60,6 @@ import {RemoverService} from './shared/services/remover.service';
     FooterComponent,
     PolishComponent,
     LampeUVComponent,
-    InstrumentsComponent,
     ContactsComponent,
     PolishPaletteComponent,
     DegreaserComponent,
@@ -57,7 +68,13 @@ import {RemoverService} from './shared/services/remover.service';
     TopPolishComponent,
     PolishRemoverComponent,
     ItemDescriptionComponent,
-    BreadCrumbComponent
+    BreadCrumbComponent,
+    UvLampsComponent,
+    LedLampsComponent,
+    UvLedLampsComponent,
+    AuthComponent,
+    LoginComponent,
+    RegistrationComponent
   ],
   imports: [
     AppRoutingModule,
@@ -69,7 +86,12 @@ import {RemoverService} from './shared/services/remover.service';
     MatMenuModule,
     MatToolbarModule,
     FormsModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule,
+    MatChipsModule,
+    MatFormFieldModule,
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [
     ProductService,
@@ -77,7 +99,10 @@ import {RemoverService} from './shared/services/remover.service';
     PrimerService,
     BaseService,
     TopService,
-    RemoverService
+    RemoverService,
+    LampService,
+    AuthService,
+    UserService
   ],
   bootstrap: [AppComponent]
 })

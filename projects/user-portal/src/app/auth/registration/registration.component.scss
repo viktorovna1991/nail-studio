@@ -1,0 +1,24 @@
+.wrapper {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  min-width: 350px;
+  width: 35%;
+}
+
+mat-card:not([class*=mat-elevation-z]) {
+  background-color: rgb(251,251,251);
+  box-shadow: none;
+  border: 1px solid rgb(223,223,223);
+  border-radius: unset;
+}
+
+span {
+  color: red;
+  font-size: 12px;
+}
+span.black {
+  color: rgba(0, 0, 0, 0.75);
+}

@@ -1,8 +1,8 @@
 <app-bread-crumb [breadcrumbs]="breadcrumbs"></app-bread-crumb>
 <div class="title">
-  <h1>Все лампы</h1>
+  <h1>UV/LED лампы</h1>
   <div class="number-group">
-    <p class="number product-title">{{lamps.length}}</p>
+    <p class="number product-title">{{uvLedLamps.length}}</p>
     <div class="line"></div>
   </div>
   <p class="word product-title">продуктов</p>
@@ -11,7 +11,7 @@
 
 <div id="gallery">
   <ul>
-    <li *ngFor="let lamp of lamps" (click)="onClick($event, lamp)">
+    <li *ngFor="let lamp of uvLedLamps" (click)="onClick($event, lamp)">
       <img src="{{lamp.image}}" alt="img">
       <p class="name-item">{{lamp.name}}</p>
       <p class="description-item">{{lamp.description}}</p>

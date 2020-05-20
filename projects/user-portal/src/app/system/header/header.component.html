@@ -48,59 +48,19 @@
     <span (mouseleave)="menuTrigger2.closeMenu()">
       <button mat-menu-item>
         <mat-icon>home</mat-icon>
-        <span>UV лампы</span>
+        <span routerLink="/uvLamps">UV лампы</span>
       </button>
       <button mat-menu-item>
         <mat-icon>people_outline</mat-icon>
-        <span>Led лампы</span>
+        <span routerLink="/ledLamps">Led лампы</span>
       </button>
       <button mat-menu-item>
         <mat-icon>videocam</mat-icon>
-        <span>UF/LED лампы</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon>exit_to_app</mat-icon>
-        <span>Гибридные лампы</span>
+        <span routerLink="/uvLedLamps">UF/LED лампы</span>
       </button>
        <button mat-menu-item>
         <mat-icon>exit_to_app</mat-icon>
-        <span>Все продукты</span>
-      </button>
-    </span>
-    </mat-menu>
-
-    <button mat-button [matMenuTriggerFor]="menu3" #menuTrigger3="matMenuTrigger" (mouseover)="menuTrigger3.openMenu()">
-      <p [ngClass]="{'hover-button': menuTrigger3.menuOpen}">Инструменты для маникюра</p>
-    </button>
-    <mat-menu #menu3="matMenu" [overlapTrigger]="false" class="my-menu">
-    <span (mouseleave)="menuTrigger3.closeMenu()">
-      <button mat-menu-item>
-        <mat-icon>home</mat-icon>
-        <span>Пилочки</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon>people_outline</mat-icon>
-        <span>Ножницы</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon>videocam</mat-icon>
-        <span>Накожницы</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon>exit_to_app</mat-icon>
-        <span>Пушеры</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon>exit_to_app</mat-icon>
-        <span>Твизеры</span>
-      </button>
-      <button mat-menu-item>
-        <mat-icon>exit_to_app</mat-icon>
-        <span>Шпатели</span>
-      </button>
-       <button mat-menu-item>
-        <mat-icon>exit_to_app</mat-icon>
-        <span>Все продукты</span>
+        <span routerLink="/lampsUV">Все продукты</span>
       </button>
     </span>
     </mat-menu>
@@ -131,7 +91,7 @@
       <mat-icon>search</mat-icon>
     </button>
     <button mat-button>
-      <mat-icon>person_outline</mat-icon>
+      <mat-icon routerLink="/registration">person_outline</mat-icon>
     </button>
     <button mat-button>
       <mat-icon>work_outline</mat-icon>
