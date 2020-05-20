@@ -1,0 +1,57 @@
+.form-container {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%)
+}
+
+mat-card {
+  width: 350px;
+}
+
+mat-form-field {
+  display: flex;
+  flex-direction: column;
+}
+
+button {
+  position: relative;
+  left: 260px;
+}
+
+mat-chip {
+  width: 350px;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 3px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  line-height: 0;
+}
+
+img {
+  width: 45px;
+  height: 45px;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: black;
+  font-weight: bolder;
+  font-size: 16px;
+}
+
+.mat-button {
+  padding-right: 30px;
+  margin: 0;
+}
+
+h3 span {
+  font-weight: normal;
+}
+

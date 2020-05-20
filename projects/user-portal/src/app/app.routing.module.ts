@@ -9,20 +9,29 @@ import {PolishRemoverComponent} from './polish/polish-remover/polish-remover.com
 import {PrimerComponent} from './polish/primer/primer.component';
 import {TopPolishComponent} from './polish/top-polish/top-polish.component';
 import {LampeUVComponent} from './lampe-uv/lampe-uv.component';
-import {InstrumentsComponent} from './instruments/instruments.component';
 import {ContactsComponent} from './contacts/contacts.component';
 import {ItemDescriptionComponent} from './polish/item-description/item-description.component';
+import {UvLampsComponent} from './lampe-uv/uv-lamps/uv-lamps.component';
+import {LedLampsComponent} from './lampe-uv/led-lamps/led-lamps.component';
+import {UvLedLampsComponent} from './lampe-uv/uv-led-lamps/uv-led-lamps.component';
+import {LoginComponent} from './auth/login/login.component';
+import {AuthComponent} from './auth/auth.component';
+import {RegistrationComponent} from './auth/registration/registration.component';
 
 // const routes: Routes = [
 //   {path: '', redirectTo: 'login', pathMatch: 'full'},
 //   {path: 'system', loadChildren: './system/system.module#SystemModule'},
 // ];
 const routes: Routes = [
+  {path: '', redirectTo: 'main', pathMatch: 'full'},
   {
     path: 'main', component: SystemComponent, data: {
       breadcrumb: 'Главная',
     }
   },
+  {path: 'login', component: LoginComponent},
+  {path: 'registration', component: RegistrationComponent},
+  {path: 'auth', component: AuthComponent},
   {path: 'polish', component: PolishComponent},
   {path: 'basePolish', component: BasePolishComponent},
   {path: 'degreaser', component: DegreaserComponent, data: {
@@ -36,8 +45,10 @@ const routes: Routes = [
   {path: 'polishRemover', component: PolishRemoverComponent},
   {path: 'primer', component: PrimerComponent},
   {path: 'topPolish', component: TopPolishComponent},
-  {path: 'lampesUV', component: LampeUVComponent},
-  {path: 'instruments', component: InstrumentsComponent},
+  {path: 'lampsUV', component: LampeUVComponent},
+  {path: 'uvLamps', component: UvLampsComponent},
+  {path: 'ledLamps', component: LedLampsComponent},
+  {path: 'uvLedLamps', component: UvLedLampsComponent},
   {path: 'contacts', component: ContactsComponent},
   {
     path: 'itemDescription', component: ItemDescriptionComponent, data: {
