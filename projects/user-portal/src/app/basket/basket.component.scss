@@ -1,0 +1,27 @@
+table {
+  width: 100%;
+}
+
+app-bread-crumb {
+  position: relative;
+  height: 50px;
+  width: 100%;
+  margin: 30px 0;
+}
+
+.basket-image-product {
+  height: 100px;
+  width: auto;
+}
+
+.product-number {
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  border-bottom: 1px solid rgba(45, 43, 43, 0.51);
+  outline: 0;
+  width: 50px;
+  padding: 8px;
+  font-size: 18px;
+  margin-right: 40px;
+}

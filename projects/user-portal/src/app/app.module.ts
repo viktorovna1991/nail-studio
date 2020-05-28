@@ -9,7 +9,7 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
-import {FormBuilder, FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import {NewItemsComponent} from './system/new-items/new-items.component';
 import {BestsellersComponent} from './system/bestsellers/bestsellers.component';
 import {SaleItemsComponent} from './system/sale-items/sale-items.component';
@@ -47,6 +47,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
 import {UserService} from './shared/services/user.service';
 import {HttpClientModule} from '@angular/common/http';
 import {RegistrationComponent} from './auth/registration/registration.component';
+import {BasketComponent} from './basket/basket.component';
+import {MatTableModule} from '@angular/material/table';
+import {CurrentCountService} from './shared/services/currentCount.service';
 
 @NgModule({
   declarations: [
@@ -56,6 +59,7 @@ import {RegistrationComponent} from './auth/registration/registration.component'
     HeaderComponent,
     NewItemsComponent,
     BestsellersComponent,
+    BasketComponent,
     SaleItemsComponent,
     FooterComponent,
     PolishComponent,
@@ -91,7 +95,8 @@ import {RegistrationComponent} from './auth/registration/registration.component'
     MatChipsModule,
     MatFormFieldModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    MatTableModule
   ],
   providers: [
     ProductService,
@@ -102,7 +107,8 @@ import {RegistrationComponent} from './auth/registration/registration.component'
     RemoverService,
     LampService,
     AuthService,
-    UserService
+    UserService,
+    CurrentCountService
   ],
   bootstrap: [AppComponent]
 })

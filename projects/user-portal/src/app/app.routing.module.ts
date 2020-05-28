@@ -17,6 +17,7 @@ import {UvLedLampsComponent} from './lampe-uv/uv-led-lamps/uv-led-lamps.componen
 import {LoginComponent} from './auth/login/login.component';
 import {AuthComponent} from './auth/auth.component';
 import {RegistrationComponent} from './auth/registration/registration.component';
+import {BasketComponent} from './basket/basket.component';
 
 // const routes: Routes = [
 //   {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -31,6 +32,7 @@ const routes: Routes = [
   },
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegistrationComponent},
+  {path: 'basket', component: BasketComponent},
   {path: 'auth', component: AuthComponent},
   {path: 'polish', component: PolishComponent},
   {path: 'basePolish', component: BasePolishComponent},

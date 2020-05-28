@@ -10,8 +10,8 @@
     <p>{{item.price}}</p>
     <h4>{{item.description}}</h4>
     <div class="basket-group">
-      <input matInput type="number"  [min]='1' class="item-number" [(ngModel)]="min" >
-      <button class="to-basket">
+      <input matInput type="number" class="item-number" [min]="1" [(ngModel)]="quantity" (ngModelChange)="valueChanged(quantity)">
+      <button class="to-basket" (click)="addToBasket(item)">
         <mat-icon>work_outline</mat-icon>
         Добавить в корзину
       </button>

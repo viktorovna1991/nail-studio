@@ -1,14 +1,27 @@
 <div class="wrapper">
   <mat-card>
     <h2>Регистрация</h2>
-    <form [formGroup]="form" (ngSubmit)="onSubmit()">
-      <div class="form-group" [ngClass]="{'has error': form.get('email').invalid && form.get('email').touched }">
-        <label for="email">Email</label>
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="registration-form">
+
+      <div class="form-group">
+        <mat-label>Имя<span>*</span></mat-label>
         <input
           type="text"
-          class="form-control underlined"
+          id="name"
+          formControlName="name"
+        >
+        <span class="form-help-text"
+              *ngIf="form.get('name').invalid && form.get('name').touched"
+        >
+       Имя не может быть пустым
+    </span>
+      </div>
+
+      <div class="form-group">
+        <mat-label>Email <span>*</span></mat-label>
+        <input
+          type="text"
           id="email"
-          placeholder="Введите email"
           formControlName="email"
         >
         <span
@@ -20,13 +33,12 @@
       <span *ngIf="form.get('email')['errors']['forbiddenEmails']">Email уже занят</span>
     </span>
       </div>
-      <div class="form-group" [ngClass]="{'has error': form.get('password').invalid && form.get('password').touched }">
-        <label for="password">Пароль</label>
+
+      <div class="form-group">
+        <mat-label>Пароль <span>*</span></mat-label>
         <input
           type="password"
-          class="form-control underlined"
           id="password"
-          placeholder="Введите пароль"
           formControlName="password"
         >
         <span
@@ -42,46 +54,25 @@
       </span>
     </span>
       </div>
-      <div class="form-group" [ngClass]="{'has error': form.get('name').invalid && form.get('name').touched }">
-        <label for="name">Имя</label>
-        <input
-          type="text"
-          class="form-control underlined"
-          id="name"
-          placeholder="Введите имя"
-          formControlName="name"
-        >
-        <span class="form-help-text"
-              *ngIf="form.get('name').invalid && form.get('name').touched"
-        >
-       Имя не может быть пустым
-    </span>
-      </div>
-      <div class="form-group" [ngClass]="{'has error': form.get('agree').invalid && form.get('agree').touched }">
-        <label for="agree">
-          <input class="checkbox"
-                 id="agree"
-                 type="checkbox"
-                 formControlName="agree"
-          >
-          <span class="black">Согласен с правилами</span>
-        </label>
-      </div>
-      <div class="form-group">
-        <button type="submit"
-                class="btn btn-block btn-primary"
-                [disabled]="form.invalid"
-        >Зарегистрироваться
-        </button>
-      </div>
-      <div class="form-group">
-        <p class="text-muted text-xs-center">
-          Уже есть аккаунт?
+
+      <div class="last-line">
+        <div class="form-group">
+          <p class="have">
+            Уже есть аккаунт?
+          </p>
           <a [routerLink]="'/login'">
             Войти!
           </a>
-        </p>
+        </div>
+        <div class="form-group">
+          <button type="submit"
+                  class="to-button"
+                  [disabled]="form.invalid"
+          >Зарегистрироваться
+          </button>
+        </div>
       </div>
+
     </form>
   </mat-card>
 </div>
