@@ -11,6 +11,12 @@
       "password": "chouchou",
       "name": "Steeven",
       "id": 2
+    },
+    {
+      "email": "dds@mail.ru",
+      "password": "111111",
+      "name": "алёна викторовна",
+      "id": 3
     }
   ],
   "bill": {

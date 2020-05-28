@@ -16,9 +16,85 @@ mat-card:not([class*=mat-elevation-z]) {
 }
 
 span {
-  color: red;
+  color: rgba(238, 92, 206);
   font-size: 12px;
 }
+
 span.black {
   color: rgba(0, 0, 0, 0.75);
+}
+
+h2 {
+  text-align: center;
+  font-family: Didot, serif;
+  font-size: 30px;
+}
+
+form.registration-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group {
+  position: relative;
+}
+
+input {
+  width: 100%;
+  background-color: white;
+  height: 30px;
+  border-radius: 0;
+  margin-bottom: 10px;
+  border: 1px solid rgb(223,223,223);
+}
+
+input[type]:focus {
+  outline: 0;
+  border-color: rgba(238, 92, 206, 0.5) !important;
+}
+
+.mat-label span {
+  color: rgba(238, 92, 206, 0.5) ;
+}
+
+span.form-help-text {
+  position: absolute;
+  top: 0;
+  right: 2%;
+}
+
+.to-button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-family: "GrotaSans","Trebuchet MS",Tahoma,sans-serif;
+  font-size: 16px;
+  color: #fff;
+  text-transform: uppercase;
+  text-decoration: none;
+  letter-spacing: 0.12rem;
+  background-size: 18px;
+  padding: 7px 10px;
+  border: 0;
+  background-color: rgba(217, 216, 216, 0.73);
+}
+
+.to-button:focus {
+  outline: 0;
+}
+
+.to-button:hover {
+  cursor: pointer;
+  background-color: #ec9eab;
+}
+
+.last-line {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+p.have {
+  margin: 0;
 }
