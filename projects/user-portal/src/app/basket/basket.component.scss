@@ -25,3 +25,24 @@ app-bread-crumb {
   font-size: 18px;
   margin-right: 40px;
 }
+
+.basket-button {
+  background-color: black;
+  border-color: black;
+  color: white;
+  border-radius: 3px;
+  padding: 5px;
+  margin: 7px;
+
+}
+
+.basket-button:hover {
+  background-color: #ec9eab;
+  border-color: #ec9eab;
+  cursor: pointer;
+
+}
+
+.basket-button:focus {
+  outline: 0;
+}

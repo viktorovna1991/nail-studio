@@ -58,7 +58,7 @@ export class ItemDescriptionComponent implements OnInit, OnDestroy {
   addToBasket(item: Item) {
     for (let i = 1; i <= this.quantity; i++) {
       this.productAddedToBasket = this.productService.getProductFromBasket();
-      if (this.productAddedToBasket === null) {
+      if (!this.productAddedToBasket) {
         this.productAddedToBasket = [];
         this.productAddedToBasket.push(item);
         this.productService.addProductToBasket(this.productAddedToBasket);
@@ -69,24 +69,21 @@ export class ItemDescriptionComponent implements OnInit, OnDestroy {
           this.productService.addProductToBasket(this.productAddedToBasket);
         }
         if (tempProduct) {
-          this.productAddedToBasket.push(item);
-          this.productService.addProductToBasket(this.productAddedToBasket);
-        } else {
           this.productAddedToBasket.find(p => {
             if (p.id === tempProduct.id) {
               p.quantity = tempProduct.quantity + 1;
               this.productService.addProductToBasket(this.productAddedToBasket);
             }
           });
-          console.log('q', this.productAddedToBasket);
         }
       }
       this.basketItemCount = this.productAddedToBasket.length;
+      console.log('up', this.basketItemCount);
       this.currentCountService.updateItemCount(this.basketItemCount);
     }
   }
 
-    valueChanged(quantity: number) {
-      quantity = this.quantity;
-    }
+  valueChanged(quantity: number) {
+    quantity = this.quantity;
   }
+}

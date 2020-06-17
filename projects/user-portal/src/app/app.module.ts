@@ -50,6 +50,7 @@ import {RegistrationComponent} from './auth/registration/registration.component'
 import {BasketComponent} from './basket/basket.component';
 import {MatTableModule} from '@angular/material/table';
 import {CurrentCountService} from './shared/services/currentCount.service';
+import {ConnectionComponent} from './basket/connection/connection.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +79,8 @@ import {CurrentCountService} from './shared/services/currentCount.service';
     UvLedLampsComponent,
     AuthComponent,
     LoginComponent,
-    RegistrationComponent
+    RegistrationComponent,
+    ConnectionComponent
   ],
   imports: [
     AppRoutingModule,
