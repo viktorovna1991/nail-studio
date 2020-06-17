@@ -1,8 +1,8 @@
 import {Router} from '@angular/router';
-import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {CurrentCountService} from '../../shared/services/currentCount.service';
 import {ProductService} from '../../shared/services/product.service';
-import {Observable} from 'rxjs';
+import {Item} from '../../shared/interfaces/item.interface';
 
 @Component({
   selector: 'app-header',
@@ -10,7 +10,8 @@ import {Observable} from 'rxjs';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  currentItemCount;
+  currentItemCount = 0;
+  item: Item;
 
   constructor(private router: Router,
               private productService: ProductService,
@@ -19,12 +20,18 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.currentCountService.currentItemCount.subscribe(value => {
-      this.currentItemCount = value;
-      if (this.productService.getProductFromBasket()) {
-        if (value === 0) {
-          this.currentItemCount = this.productService.getProductFromBasket().length;
-        }
+      console.log('value', value.valueOf());
+      if (value >= 0) {
+        this.productService.currentItems.subscribe(value1 => {
+          const products = this.productService.getProductFromBasket();
+          console.log('products', products);
+          this.currentItemCount = 0;
+          for (let i = 0; i < products.length; i++) {
+            this.currentItemCount += products[i].quantity;
+          }
+        });
       }
+      console.log(this.currentItemCount, 'ch');
     });
   }
 

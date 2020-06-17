@@ -7,8 +7,7 @@ import {Injectable} from '@angular/core';
 
 export class CurrentCountService {
   currentItemCount = new BehaviorSubject(0);
-
-  // currentMessage = this.currentItemCount.asObservable();
+  currentMessage = this.currentItemCount.asObservable();
 
   constructor() {
   }
@@ -16,5 +15,4 @@ export class CurrentCountService {
   public updateItemCount(count: number) {
     this.currentItemCount.next(count);
   }
-
 }

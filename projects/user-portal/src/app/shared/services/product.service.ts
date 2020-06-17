@@ -1,6 +1,9 @@
 import {Item} from '../interfaces/item.interface';
+import {BehaviorSubject} from 'rxjs';
 
 export class ProductService {
+  public currentItemsSource = new BehaviorSubject<Item[]>(null);
+  public currentItems = this.currentItemsSource.asObservable();
   items: Item[] = [
     {
       id: 1,
@@ -75,4 +78,6 @@ export class ProductService {
   public removeAllProductsFromBasket() {
     return localStorage.removeItem('product');
   }
+
+
 }

@@ -1,23 +1,8 @@
-import {Component, OnInit} from '@angular/core';
+import {Component, OnChanges, OnInit, SimpleChanges} from '@angular/core';
 import {IBreadCrumb} from '../shared/interfaces/breadCrumb.iterface';
 import {ProductService} from '../shared/services/product.service';
 import {MatTableDataSource} from '@angular/material/table';
-
-// export interface PeriodicElement {
-//   position: number;
-//   image: string;
-//   name: string;
-//   price: number;
-//   quantity: number;
-//   toDelete: string;
-//   total: number;
-// }
-
-// const ELEMENT_DATA: PeriodicElement[] = [
-//   {position: 1, image: 'aa', name: 'Hydrogen', price: 24, quantity: 1, toDelete: 'yes', total: 1},
-//   {position: 2, image: 'aa', name: 'Hydrogen', price: 24, quantity: 1, toDelete: 'yes', total: 1},
-//   {position: 3, image: 'aa', name: 'Hydrogen', price: 24, quantity: 1, toDelete: 'yes', total: 1}
-// ];
+import {CurrentCountService} from '../shared/services/currentCount.service';
 
 @Component({
   selector: 'app-basket',
@@ -40,17 +25,35 @@ export class BasketComponent implements OnInit {
   ];
   displayedColumns: string[] = ['position', 'image', 'name', 'price', 'quantity', 'toDelete', 'total'];
 
-  // dataSource = ELEMENT_DATA;
-
-  constructor(private productService: ProductService) {
+  constructor(private productService: ProductService,
+              private currentCountService: CurrentCountService) {
   }
 
   ngOnInit() {
-    this.items = this.productService.getProductFromBasket();
-    this.dataSource = new MatTableDataSource(this.items);
+    this.productService.currentItems.subscribe(items => {
+      items = this.items = this.productService.getProductFromBasket();
+      this.dataSource = new MatTableDataSource(this.items);
+      console.log(items, "itemsb");
+    });
   }
 
   getTotalCost() {
     return this.items.map(t => t.price * t.quantity).reduce((acc, value) => acc + value, 0);
   }
+
+  toDeleteProduct(item: any) {
+    this.items = this.items.filter(i => i.id !== item.id);
+    this.productService.addProductToBasket(this.items);
+    this.productService.currentItemsSource.next(this.items);
+    this.currentCountService.updateItemCount(this.items);
+  }
+
+  toChangeQuality(item: any) {
+    let prod = this.productService.getProductFromBasket();
+    prod.find(p => p.id === item.id).quantity = item.quantity;
+    this.productService.removeAllProductsFromBasket();
+    this.productService.addProductToBasket(prod);
+    this.currentCountService.updateItemCount(this.items.length);
+  }
+
 }
